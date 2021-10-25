@@ -74,27 +74,35 @@ export class MemoViewComponent implements OnInit {
       }
     });
 
+    console.log('before_sMemos.push');
     if (memoIds.length > 0) {
       for (let i = 0; i < memoIds.length; i++) {
         this.sMemos.push(this.memos[memoIds[i] - 1]);
       }
     }
 
-    this.sMemos.sort((a, b) => {
+    // ログが出力されないので、そもそもソートされていない
+    // caseの値はoptionタグのvalueの中身を記述するべきだが、勘違いして「登録順(デフォルト)」など表示するための文字列で比較していた　当然すべて引っかからず延々とreturn0していた
+    // また、tsのソートはソートした配列を直接書き換えるのではなくあくまでソートした結果を戻り値として返すため、代入先がなければ結果を残さない　その部分も勘違いしており、ただソートを実行しただけになっていた
+    this.sMemos = this.sMemos.sort((a, b) => {
+      console.log('sortLog');
       switch (this.sortColum) {
-        case '登録順(デフォルト)':
+        case 'default':
           if (this.isUpperSort) {
+            console.log('upper_defolt');
             return a.id - b.id;
           } else {
+            console.log('lower_defolt');
             return b.id - a.id;
           }
 
-        case '五十音順':
+        case 'title':
           return a.title < b.title ? -1 : 1;
-        case '編集順':
+        case 'upDay':
           return a.upday < b.upday ? -1 : 1;
       }
       return 0;
     });
+    this.sMemos=this.sMemos;
   }
 }
