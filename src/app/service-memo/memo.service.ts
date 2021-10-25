@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-import { Memo } from './Memo';
+import { Memo } from './memo';
 import { MEMOS } from './mock-memo';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MemoService {
-
-  constructor() { }
+  constructor() {}
 
   // getMemo(): Observable<Memo> {
 
