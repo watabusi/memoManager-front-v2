@@ -9,7 +9,7 @@ import { MemoViewComponent } from './memo-view/memo-view.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MemoAddComponent } from './memo-add/memo-add.component';
 import { MemoDetailComponent } from './memo-detail/memo-detail.component';
-import{StringCutPipe}from './string-cut.pipe';
+import { StringCutPipe } from './string-cut.pipe';
 //import { TagManagerComponent } from './tag-manager/tag-manager.component';
 
 @NgModule({
@@ -22,13 +22,8 @@ import{StringCutPipe}from './string-cut.pipe';
     StringCutPipe,
     //TagManagerComponent
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
