@@ -1,1 +1,25 @@
-<p>memo-view works!</p>
+<div class="main">
+    <h2 class="pageTitle">メモ一覧</h2>
+    <div class="memoList">
+        <button class="linkButton" type="submit" name="memoId" value="仮タイトル 更新日時：yyyy/mm/dd">仮タイトル
+            更新日時：yyyy/mm/dd</button>
+    </div>
+</div>
+<div class="sortMenu">
+    <p>タグで絞り込み</p>
+    <select>
+        <option value="all">全て</option>
+        <option value="none">タグなし</option>
+    </select>
+    <p>並べ替え</p>
+    <select>
+        <option value="default">登録順(デフォルト)</option>
+        <option value="title">五十音順</option>
+        <option value="upDay">編集順</option>
+    </select>
+    <input type="radio" name="up" value="asc">
+    <label>昇順</label>
+    <input type="radio" name="down" value="desc">
+    <label>降順</label>
+    <button type="submit" name="sort">ソート</button>
+</div>
