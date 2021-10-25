@@ -1,0 +1,7 @@
+.box {
+    width: 800px;
+    height: 300px;
+    border: 1px solid #000;
+    overflow-y: scroll;
+    float: left;
+}

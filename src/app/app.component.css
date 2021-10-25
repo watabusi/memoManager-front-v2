@@ -1,3 +1,18 @@
-p {
-  font-family: Lato;
+aside {
+    float: left;
+    background-color: azure;
+    padding-bottom: 300px;
+}
+
+aside a {
+    display: block;
+    color: #333333;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+aside a:hover {
+    background-color: #dcdcdc;
 }

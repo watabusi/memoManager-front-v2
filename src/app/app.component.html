@@ -1,4 +1,11 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<aside>
+  <h3>メモ管理アプリ</h3>
+  <ul>
+    <li><a routerLink="/top">トップページ</a></li>
+    <li><a href="memoView">メモ一覧</a></li>
+    <li><a href="memoAdd">メモ追加</a></li>
+    <li><a href="tagEdit">タグ管理</a></li>
+  </ul>
+</aside>
+<h1>{{title}}</h1>
+<router-outlet></router-outlet>
