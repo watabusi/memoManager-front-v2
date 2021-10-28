@@ -74,7 +74,7 @@ export class MemoViewComponent implements OnInit {
       }
     });
 
-    console.log('before_sMemos.push');
+    console.log('this comment is before_sMemos.push');
     if (memoIds.length > 0) {
       for (let i = 0; i < memoIds.length; i++) {
         this.sMemos.push(this.memos[memoIds[i] - 1]);
