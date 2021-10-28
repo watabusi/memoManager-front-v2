@@ -18,9 +18,9 @@ export class MemoViewComponent implements OnInit {
   memotags: MemoTag[] = [];
   sMemos: Memo[] = [];
 
-  pickUpTag = '';
-  sortColum = '';
-  isUpperSort = false;
+  pickUpTag = 'all';
+  sortColum = 'default';
+  isUpperSort = true;
 
   constructor(
     private memoService: MemoService,
@@ -33,8 +33,6 @@ export class MemoViewComponent implements OnInit {
     this.getSMemos();
     this.getTags();
     this.getMemoTags();
-    this.pickUpTag = 'all';
-    this.sortColum = 'default';
   }
 
   getMemos(): void {
@@ -58,26 +56,42 @@ export class MemoViewComponent implements OnInit {
   sortMemos(): void {
     this.sMemos = [];
 
-    let tagId = 0;
-    this.tags.forEach((element) => {
-      if (element.tag == this.pickUpTag) {
-        tagId = element.id;
-      }
-    });
+    if (this.pickUpTag == 'all') {
+      this.sMemos = this.memos;
+    } else if (this.pickUpTag == 'none') {
+      this.memos.forEach((e) => {
+        let tagNone = true;
+        this.memotags.forEach((e2) => {
+          if (e.id == e2.memoId) {
+            tagNone = false;
+          }
+        });
+        if (tagNone) {
+          this.sMemos.push(e);
+        }
+      });
+    } else {
+      let tagId = 0;
+      this.tags.forEach((element) => {
+        if (element.tag == this.pickUpTag) {
+          tagId = element.id;
+        }
+      });
 
-    // 宣言時に空でもいいから代入しないと実行時に警告で止められてしまう
-    let memoIds: number[] = [];
+      // 宣言時に空でもいいから代入しないと実行時に警告で止められてしまう
+      let memoIds: number[] = [];
 
-    this.memotags.forEach((element) => {
-      if (element.tagId == tagId) {
-        memoIds.push(element.memoId);
-      }
-    });
+      this.memotags.forEach((element) => {
+        if (element.tagId == tagId) {
+          memoIds.push(element.memoId);
+        }
+      });
 
-    console.log('this comment is before_sMemos.push');
-    if (memoIds.length > 0) {
-      for (let i = 0; i < memoIds.length; i++) {
-        this.sMemos.push(this.memos[memoIds[i] - 1]);
+      console.log('this comment is before_sMemos.push');
+      if (memoIds.length > 0) {
+        for (let i = 0; i < memoIds.length; i++) {
+          this.sMemos.push(this.memos[memoIds[i] - 1]);
+        }
       }
     }
 
@@ -103,6 +117,6 @@ export class MemoViewComponent implements OnInit {
       }
       return 0;
     });
-    this.sMemos=this.sMemos;
+    this.sMemos = this.sMemos;
   }
 }
