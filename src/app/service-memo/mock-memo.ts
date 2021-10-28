@@ -11,20 +11,26 @@ export const MEMOS: Memo[] = [
   },
   {
     id: 3,
-    title: 'test3',
-    memo: 'memo detail demo.',
+    title: 'testTag_1',
+    memo: '「testTag」タグ用',
     upday: new Date(Date.now()),
   },
   {
     id: 4,
-    title: 'test4',
-    memo: 'memo detail demo.',
+    title: 'testTag_2',
+    memo: '「testTag」タグ用',
     upday: new Date(Date.now()),
   },
   {
     id: 5,
-    title: 'test5',
-    memo: 'memo detail demo.',
+    title: 'Java_1',
+    memo: '「Java」タグ用',
+    upday: new Date(Date.now()),
+  },
+  {
+    id: 6,
+    title: 'C#_1',
+    memo: '「C#」タグ用',
     upday: new Date(Date.now()),
   },
 ];
