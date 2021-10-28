@@ -5,7 +5,7 @@ import { TopComponent } from './top/top.component';
 import { MemoViewComponent } from './memo-view/memo-view.component';
 import { MemoAddComponent } from './memo-add/memo-add.component';
 import { MemoDetailComponent } from './memo-detail/memo-detail.component';
-import { TagManagerComponent } from './tag-manager/tag-manager.component';
+//import { TagManagerComponent } from './tag-manager/tag-manager.component';
 
 /** パス群
  * path:パス
@@ -19,12 +19,11 @@ const routes: Routes = [
   { path: 'memoAdd', component: MemoAddComponent },
   { path: 'memoDetail', component: MemoDetailComponent },
   { path: 'memoDetail/:id', component: MemoDetailComponent },
-  { path: 'tagManager', component: TagManagerComponent },
-
-]
+  //{ path: 'tagManager', component: TagManagerComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

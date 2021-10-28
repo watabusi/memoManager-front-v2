@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MemoAddComponent } from './memo-add/memo-add.component';
 import { MemoDetailComponent } from './memo-detail/memo-detail.component';
 import { TagManagerComponent } from './tag-manager/tag-manager.component';
+import { StringCutPipe } from './string-cut.pipe';
 
 @NgModule({
   declarations: [
@@ -18,15 +19,11 @@ import { TagManagerComponent } from './tag-manager/tag-manager.component';
     MemoViewComponent,
     MemoAddComponent,
     MemoDetailComponent,
-    TagManagerComponent
+    TagManagerComponent,
+    StringCutPipe
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

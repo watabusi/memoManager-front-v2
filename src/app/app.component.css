@@ -2,6 +2,8 @@ aside {
     float: left;
     background-color: azure;
     padding-bottom: 300px;
+    padding-right: 10px;
+    margin-right: 10px;
 }
 
 aside a {
