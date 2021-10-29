@@ -27,4 +27,6 @@ export class MemoDetailComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.memoService.getMemo(id).subscribe((memo) => (this.memo = memo));
   }
+
+  update(): void {}
 }
