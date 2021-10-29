@@ -10,9 +10,10 @@ import { MEMOS } from './mock-memo';
 export class MemoService {
   constructor() {}
 
-  // getMemo(): Observable<Memo> {
-
-  // }
+  getMemo(id: number): Observable<Memo> {
+    const memo = MEMOS.find((m) => m.id == id)!;
+    return of(memo);
+  }
 
   getMemos(): Observable<Memo[]> {
     const memos = of(MEMOS);

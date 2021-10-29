@@ -3,7 +3,7 @@
   <div class="memoList">
     <div *ngFor="let memo of sMemos">
       <p>
-        <a href="/memoDetail/{{ memo.memoId }}">{{
+        <a routerLink="/memoDetail/{{ memo.memoId }}">{{
           memo.title | stringCut: 40
         }}</a>
       </p>
