@@ -23,3 +23,5 @@ pipeとか、最初に作ったやつ以外はappomduleでimportできてない�
 Memo→memoのimport修正はちゃんとやった方がいいかも
 
 単純なエラーの修正ではなくimport除外と新しいimportやったりすると、複数ファイルのcommitできなくなるぽい？から気を付けること
+
+在宅環境でのテスト、vscとgithubDesktopから
